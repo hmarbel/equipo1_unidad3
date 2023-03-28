@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resistencia</title>
+
+    <style>
+        * {
+            font-family: "Montserrat", "Segoe UI", sans-serif;
+            text-align: center;
+        }
+
+        body {
+            background-color: #31393c;
+            margin: 0;
+        }
+
+        header {
+            background-color: #2176ff;
+            display: flex;
+            height: 150px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+        }
+
+        header h1 {
+            color: white;
+        }
+
+        .radio {
+            display: flex;
+            flex-flow: row wrap;
+            flex: 1;
+            padding: 0.5rem;
+        }
+
+        .radio {
+            padding: 4px;
+            position: relative;
+        }
+
+        .radio #terminar {
+            border-color: #FDCA40;
+            border-style: none;
+            border-radius: 20px;
+            height: 25px;
+            margin-top: 3px;
+            margin-left: 5px;
+            padding: 0px 15px;
+            cursor: pointer;
+            transition: all 0.3s linear;
+            background-color: #FDCA40;
+        }
+
+        .radio input[type="radio"] {
+            width: auto;
+            height: 100%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border-color: white;
+            appearance: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 20px;
+            padding: 4px 15px;
+            background: #33a1fd;
+            color: white;
+            transition: all 0.3s linear;
+        }
+
+        .radio input[type="radio"]:checked {
+            background-color: white;
+            color: #31393c;
+            box-shadow: 0 1px 1px #0000002e;
+            text-shadow: 0 1px 0px #79485f7a;
+        }
+
+        .radio input[type="radio"]:before {
+            content: attr(label);
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+        #content {
+            width: 500px;
+            height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #5d6466;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #content h3 {
+            color: #FDCA40;
+        }
+
+        #content input[type="number"] {
+            border-radius: 12px;
+            border-style: solid;
+            border-color: transparent;
+            height: 20px;
+            width: 40px;
+            margin: 0px 5px;
+        }
+
+        #datos p {
+            color: white;
+        }
+
+        footer {
+            background-color: #2176ff;
+            display: flex;
+            height: 50px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+            color: white;
+        }
+
+        .visible {
+            display: visible;
+        }
+        .oculto {
+            display: none;
+        }
+
+        .vVisible {
+            display: inline;
+        }
+        .vOculto {
+            display: none;
+        }
+    </style>
+
+    <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Selecciona un tipo de resistencia</h1>
+
+        <nav>
+            <div class="radio">
+                <input label="4 bandas" type="radio" name="banda" value="banda4" id="banda4" name="banda4" onclick="ver(4)" checked />
+
+                <input label="5 bandas" type="radio" name="banda" value="banda5" id="banda5" name="banda5" onclick="ver(5)" />
+
+                <input label="6 bandas" type="radio" name="banda" value="banda6" id="banda6" name="banda6" onclick="ver(6)" />
+
+                <input type="button" id="terminar" value="Terminar" onclick="terminarPrograma()"/>
+            </div>
+        </nav>
+    </header>
+
+    <section id="section" class="visible">
+        <div id="content">
+            <h3>Ingresa los valores de las bandas</h3>
+    
+            <div id="bandas4" name="bandas4" class="visible">
+                <input type="number" name="na1" id="na1" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(na1)"/>
+                <input type="number" name="na2" id="na2" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(na2)"/>
+                <input type="number" name="na3" id="na3" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(na3)"/>
+                <input type="number" name="na4" id="na4" value="0" min="0" max="7" class="inputNumber" onfocus="quitaBorde(na4)"/>
+                <input type="button" id="calcularA" value="Calcular"
+                    onclick="validar(na1.value, na2.value, na3.value, na4.value)" />
+            </div>
+    
+            <div id="bandas5" name="bandas5" class="oculto">
+                <input type="number" name="nb1" id="nb1" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(nb1)"/>
+                <input type="number" name="nb2" id="nb2" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(nb2)"/>
+                <input type="number" name="nb3" id="nb3" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(nb3)"/>
+                <input type="number" name="nb4" id="nb4" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(nb4)"/>
+                <input type="number" name="nb5" id="nb5" value="0" min="0" max="7" class="inputNumber" onfocus="quitaBorde(nb5)"/>
+                <input type="button" id="calcularB" value="Calcular"
+                    onclick="validar(nb1.value, nb2.value, nb3.value, nb4.value, nb5.value)" />
+            </div>
+    
+            <div id="bandas6" name="bandas6" class="oculto">
+                <input type="number" name="nc1" id="nc1" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(nc1)"/>
+                <input type="number" name="nc2" id="nc2" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(nc2)"/>
+                <input type="number" name="nc3" id="nc3" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(nc3)"/>
+                <input type="number" name="nc4" id="nc4" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(nc4)"/>
+                <input type="number" name="nc5" id="nc5" value="0" min="0" max="11" class="inputNumber" onfocus="quitaBorde(nc5)"/>
+                <input type="number" name="nc6" id="nc6" value="0" min="0" max="7" class="inputNumber" onfocus="quitaBorde(nc6)"/>
+                <input type="button" id="calcularC" value="Calcular"
+                    onclick="validar(nc1.value, nc2.value, nc3.value, nc4.value, nc5.value, nc6.value)" />
+            </div>
+    
+            <div id="datos">
+                <p id="resistencia"><strong>Resistencia:</strong></p>
+                <p id="tolerancia"><strong>Tolerancia:</strong></p>
+            </div>
+    
+            <div id="resultado"></div>
+        </div>
+    </section>
+
+    <div id="divTerminar">
+
+    </div>
+
+    <footer>
+        <h5>Designed by Coré Martínez</h5>
+    </footer>
+</body>
+
+</html>

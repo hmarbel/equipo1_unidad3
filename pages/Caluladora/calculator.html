@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <style>
+        button {
+            margin-bottom: 10px;
+            border-style: solid;
+            border-color: #32322F;
+            border-radius: 16px;
+            padding: 2px 15px;
+            background-color: #32322F;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        button a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background-color: #464543;
+            border-color: #464543;
+        }
+
+    </style>
+</head>
+
+<body>
+    <center>
+        <button><a href="../../index.html">Regresar</a></button>
+    </center>
+    <div id="container">
+        <form id="calculadora">
+            <div id="pantalla">
+                <label id="titulohex" class="mini titulo">HEX</label>
+                <label id="hex" class="mini">0</label>
+                <label id="titulooct" class="mini titulo">OCT</label>
+                <label id="oct" class="mini">0</label>
+                <label id="texto">0</label>
+            </div>
+            <!--<p id="pantalla">0</p>-->
+            <div id="buttons">
+                <input type="button" class="boton secundaria" value="CE" onclick="borradoParcial()" />
+                <input type="button" class="boton secundaria" value="C" onclick="borradoTotal()" />
+                <input type="button" class="boton secundaria" value="+/-" onclick="opuest()" />
+                <input type="button" class="boton secundaria" value="%" onclick="porcent()" />
+                <input type="button" class="boton primaria" value="/" onclick="operar('/')" />
+
+                <input type="button" class="boton secundaria" value="Retr" onclick="retro()" />
+                <input type="button" class="boton numero" value="7" onclick="numero('7')" />
+                <input type="button" class="boton numero" value="8" onclick="numero('8')" />
+                <input type="button" class="boton numero" value="9" onclick="numero('9')" />
+                <input type="button" class="boton primaria" value="&#215;" onclick="operar('*')" />
+
+                <input type="button" class="boton secundaria" value="1/x" onclick="inve()" />
+                <input type="button" class="boton numero" value="4" onclick="numero('4')" />
+                <input type="button" class="boton numero" value="5" onclick="numero('5')" />
+                <input type="button" class="boton numero" value="6" onclick="numero('6')" />
+                <input type="button" class="boton primaria" value="-"  onclick="operar('-')"/>
+
+                <input type="button" class="boton secundaria" value="Raíz&#178;" onclick="raiz2()" />
+                <input type="button" class="boton numero" value="1" onclick="numero('1')" />
+                <input type="button" class="boton numero" value="2" onclick="numero('2')" />
+                <input type="button" class="boton numero" value="3" onclick="numero('3')" />
+                <input type="button" class="boton primaria" value="+" onclick="operar('+')" />
+
+                <input type="button" class="boton secundaria" value="Raíz&#179;" onclick="raiz3()" />
+                <input type="button" class="boton numero pordos" value="0" onclick="numero('0')" />
+                <input type="button" class="boton numero" value="." onclick="numero('.')" />
+                <input type="button" class="boton primaria" value="=" onclick="igualar()" />
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

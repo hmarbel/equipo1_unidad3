@@ -1,0 +1,174 @@
+* {
+  font-family: 'Roboto Condensed', 'Montserrat', 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgba(36, 36, 36, 0.9);
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  color: white;
+  z-index: 1000;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+#container {
+  padding-right: 25px;
+  padding-left: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#logo {
+  float: left;
+}
+
+#logo a {
+  text-decoration: none;
+  letter-spacing: 4px;
+  font-weight: 500;
+  font-size: 22px;
+  color: #fff;
+}
+
+#pages {
+  float: right;
+}
+
+#pages ul {
+  list-style-type: none;
+  list-style: none;
+}
+
+#pages li {
+  display: inline-block;
+  margin: 0px 0px 0px 20px;
+}
+
+#pages a {
+  text-decoration: none;
+  letter-spacing: 4px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fff;
+}
+
+#pages a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+#content {
+  background-image: url("../img/landing.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  text-transform: uppercase;
+
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 0px;
+}
+
+#center_content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#actividad {
+  color: white;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+}
+
+#tema {
+  color: white;
+  font-size: 48px;
+  letter-spacing: 24px;
+  font-weight: 500;
+}
+
+#contenido {
+  background-color: #fff;
+  margin: 0;
+}
+
+#info_down {
+  background-color: rgb(36, 36, 36);
+  margin: 0;
+  padding: 20px 0px;
+  padding-left: 80px;
+  color: #A1A1A1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#info_down div h4,
+#info_down div p {
+  margin: 0;
+}
+
+#info_down div h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#info_down div p {
+  font-size: 12px;
+}
+
+#equipo {
+  padding: 75px 0px;
+}
+
+#equipo_container {
+  width: 100%;
+  padding: 0 75px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+  border-radius: 12px;
+  padding: 10px;
+  transition: all 0.3s;
+  margin: 0 10px 10px 10px;
+  background-color: #EDECEF;
+  box-shadow: 5px 5px 10px rgba(161, 161, 161, 0.4);
+}
+
+.card:hover {
+  margin-top: -30px;
+}
+
+.card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px #A0A0A0;
+}
+
+.card p {
+  letter-spacing: 0;
+  font-size: 14px;
+}
